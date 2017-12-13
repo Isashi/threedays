@@ -2,7 +2,7 @@ Place creation!
 
 <%= form_for(@place, html: {multipart: true}) do |f| %>
 	<%= f.text_field :title, placeholder: "Title" %>
-	<%= f.text_area :description, placeholder: "Description" %>
+	<%= f.text_area :description, placeholder: "Description", class:"form-control", id:"exampleFormControlTextarea1", rows:"3" %>
 	<%= f.text_field :lat, placeholder: "Latitude" %>
 	<%= f.text_field :long, placeholder: "Longitude" %>
 

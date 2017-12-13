@@ -4,12 +4,19 @@
     <% if @place.pictures.first == picture %>
 	    <div class="carousel-item active">
 	    	<%= image_tag(picture.image.url, alt: "Rails logo", class:"d-block w-100 CarouselImg") %>
-	    </div>
-    <% else %>
+	  <% else %>
 	    <div class="carousel-item">
 	    	<%= image_tag(picture.image.url, alt: "Rails logo", class:"d-block w-100 CarouselImg") %>
-	    </div>
-	  <% end %>	    
+	  <% end %>
+	  <% if user_signed_in? && current_user.id == @place.user_id %>
+		  	<div class="carousel-caption d-none d-md-block">
+	    		<p>	
+	    			<%= link_to "delete", picture, method: :delete,
+         	                         		data: { confirm: "You sure?" } %>
+  				</p>
+  			</div>
+  	<% end %>
+	    </div>	    
   <% end %>
 
   </div>
