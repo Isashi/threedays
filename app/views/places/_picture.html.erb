@@ -3,11 +3,11 @@
   <% @place.pictures.each do |picture| %>
     <% if @place.pictures.first == picture %>
 	    <div class="carousel-item active">
-	    	<%= image_tag(picture.image.url, alt: "Rails logo", class:"d-block w-100S") %>
+	    	<%= image_tag(picture.image.url, alt: "Rails logo", class:"d-block w-100") %>
 	    </div>
     <% else %>
 	    <div class="carousel-item">
-	    	<%= image_tag(picture.image.url, alt: "Rails logo", class:"d-block w-100S") %>
+	    	<%= image_tag(picture.image.url, alt: "Rails logo", class:"d-block w-100") %>
 	    </div>
 	  <% end %>	    
   <% end %>
