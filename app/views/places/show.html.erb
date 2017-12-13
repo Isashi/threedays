@@ -1,6 +1,6 @@
 <% provide(:title, @place.title) %>
 <h1>
-  Welcccome to <%= @place.title %>!
+  Welcome to <%= @place.title %>!
 </h1>
 
 <!-- CAROUSEL -->
@@ -16,6 +16,9 @@
   Long: <%= @place.long %>
 </h2>
 
+<% if browser.device.mobile? %>
+	You are from mobile!
+<% else %>
 <iframe
   width="600"
   height="450"
@@ -23,6 +26,8 @@
   src="https://www.google.com/maps/embed/v1/place?key=AIzaSyAnTulIOurK-7LgPvkZ2QUZZVF1VtnEKeg
   &q=<%= @place.title %>">
 </iframe>
+<% end %>
+
 
 <h3>Comments</h3>
 <%= render partial: 'places/comment', collection: @place.comments %>

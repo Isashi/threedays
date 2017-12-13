@@ -1,4 +1,9 @@
 class ApplicationController < ActionController::Base
+	require "browser"
+
+	browser = Browser.new("Some User Agent", accept_language: "en-us")
+
+	
   protect_from_forgery with: :exception
 
   before_action :configure_permitted_parameters, if: :devise_controller?

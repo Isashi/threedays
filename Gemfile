@@ -15,6 +15,7 @@ gem 'omniauth-facebook'
 gem 'will_paginate',           '3.1.5'
 gem 'bootstrap-will_paginate', '1.0.0'
 gem 'paperclip'
+gem 'browser'
 #gem 'aws-sdk', '~> 2.3'
 #gem 'rmagick', '2.16.0'
 
