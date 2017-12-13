@@ -3,7 +3,8 @@
   Welcome to <%= @place.title %>!
 </h1>
 
-<p><%= render partial: 'places/picture', collection: @place.pictures %></p>
+<!-- CAROUSEL -->
+<%= render 'places/picture' %>
 
 <h2>
   <%= @place.description %>
