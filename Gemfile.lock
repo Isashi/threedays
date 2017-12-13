@@ -100,6 +100,8 @@ GEM
     ffi (1.9.18-x86-mingw32)
     figaro (1.1.1)
       thor (~> 0.14)
+    font-awesome-rails (4.7.0.2)
+      railties (>= 3.2, < 5.2)
     formatador (0.2.5)
     globalid (0.4.1)
       activesupport (>= 4.2.0)
@@ -318,6 +320,7 @@ DEPENDENCIES
   coffee-rails (= 4.2.2)
   devise
   figaro
+  font-awesome-rails
   guard (= 2.13.0)
   guard-livereload
   guard-minitest (= 2.4.4)
