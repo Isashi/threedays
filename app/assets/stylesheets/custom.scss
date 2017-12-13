@@ -158,7 +158,11 @@ footer {
     margin-left: 1em; }
 
 .CarouselImg {
-  width: auto;
-  height: 500px;
-  max-height: 500px;
+  object-fit: contain;
+  height: 400px;
+  max-height: 400px;
+}
+
+.carousel-inner {
+  background: #333333;
 }
