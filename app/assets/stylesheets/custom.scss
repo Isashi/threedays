@@ -11,6 +11,8 @@
 
 body {
   padding-top: 80px;
+  font-family: 'Emilys Candy', cursive;
+  font-size: 1.3rem;
 }
 
 .body {
@@ -69,7 +71,7 @@ p {
   text-transform: uppercase;
   letter-spacing: -1px;
   padding-top: 9px;
-  font-weight: bold;
+  font-weight: none;
   &:hover {
     color: #fff;
     text-decoration: none;
