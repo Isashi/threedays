@@ -1,0 +1,11 @@
+<% provide(:title, @itinerary.name) %>
+<h1>
+  Itinerary: <%= @itinerary.name %>!
+</h1>
+
+<% @itinerary.places.each do |place| %>
+	<li>
+		  <%= link_to place.title, place %>
+	</li>
+<% end %>
+

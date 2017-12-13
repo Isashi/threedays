@@ -1,0 +1,36 @@
+<% provide(:title, @place.title) %>
+<h1>
+  Welcome to <%= @place.title %>!
+</h1>
+
+<p><%= render partial: 'places/picture', collection: @place.pictures %></p>
+
+<h2>
+  <%= @place.description %>
+</h2>
+<h2>
+  Lat: <%= @place.lat %>
+</h2>
+<h2>
+  Long: <%= @place.long %>
+</h2>
+
+<h3>Comments</h3>
+<%= render partial: 'places/comment', collection: @place.comments %>
+
+
+<% if current_user %>
+
+<%= render partial: 'comments/form' %>
+
+<% end %>
+
+<iframe
+  width="600"
+  height="450"
+  frameborder="0" style="border:0"
+  src="https://www.google.com/maps/embed/v1/place?key=AIzaSyAnTulIOurK-7LgPvkZ2QUZZVF1VtnEKeg
+  &q=<%= @place.title %>">
+</iframe>
+
+

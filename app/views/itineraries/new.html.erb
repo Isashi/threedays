@@ -1,0 +1,17 @@
+Itinerary creation!
+
+<%= form_for @itinerary do |f| %>
+  <p>
+    <%= f.label :name %><br/>
+    <%= f.text_field :name %>
+  </p>
+
+  <p>
+  <%= f.label "Select a place:" %><br/>
+	<%= f.collection_check_boxes(:id, Place.all, :id, :title, {:multiple => true}) %>
+	</p>
+
+  <p>
+    <%= f.submit 'Submit' %>
+  </p>
+<% end %>

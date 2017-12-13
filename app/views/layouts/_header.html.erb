@@ -1,0 +1,43 @@
+<nav class="navbar navbar-expand-lg navbar-dark bg-primary fixed-top">
+<div class="container">
+    <%= link_to "3-days travel", root_path, class:"navbar-brand", id: "logo" %>
+
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav mr-auto">
+        
+      </ul>
+      <ul class="navbar-nav my-2 my-lg-0">
+
+        <li class="nav-item"><%= link_to "Users", users_path , class:"nav-link"%></li>
+        <li class="nav-item"><%= link_to "Places", places_path , class:"nav-link"%></li>
+        <li class="nav-item"><%= link_to "Itineraries", itineraries_path , class:"nav-link"%></li>
+
+        <li class="nav-item active dropdown">
+          <% if user_signed_in? %>
+            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Welcome 
+            <%= gravatar_for_header current_user %>
+            <strong><%= current_user.email %></strong>!</a>
+            <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+              <%= link_to "Create new place", new_place_path, class:"dropdown-item" %>
+              <%= link_to "Create new itinerary", new_itinerary_path, class:"dropdown-item" %>      
+              <%= link_to "Show Profile", user_path(current_user), class:"dropdown-item" %>
+              <%= link_to "Edit Profile", edit_user_registration_path, class:"dropdown-item" %>
+              <%= link_to "Sign out", destroy_user_session_path, method: :delete, class:"dropdown-item"%>
+            </div>
+          <% else %>
+            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Connect</strong></a>
+            <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+              <%= link_to "Log in", new_user_session_path, class:"dropdown-item" %>
+              <%= link_to "Log in with facebook", user_facebook_omniauth_authorize_path, class:"dropdown-item"%>        
+              <%= link_to "Sign up", new_user_registration_path, class:"dropdown-item" %>
+            </div>
+          <% end %>  
+        </li>
+      </ul>
+    </div>
+  </div>
+</nav>

@@ -1,0 +1,8 @@
+<%= form_for(picture) do |f| %>
+	<p><%= image_tag picture.image.url(:thumb) %></p>
+	
+	<% if user_signed_in? && current_user.id == @place.user_id %>
+		<%= link_to "delete", picture, method: :delete,
+         	                         data: { confirm: "You sure?" } %>
+  <% end %>
+<% end %>

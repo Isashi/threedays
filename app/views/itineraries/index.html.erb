@@ -1,0 +1,20 @@
+<% provide(:title, 'All itineraries') %>
+<h1>All itineraries</h1>
+
+	<ul class="users">
+		<% @itinerary.each do |itinerary| %>
+			<li>
+				  <%= link_to itinerary.name, itinerary %>
+
+				  Current user: <%= current_user.id %>
+
+				  Itinerary user: <%= itinerary.user_id %>
+				  <% if current_user.id == itinerary.user_id %>
+    | 			<%= link_to "delete", itinerary, method: :delete,
+                                  data: { confirm: "You sure?" } %>
+    |       <%= link_to "Edit", edit_itinerary_path(itinerary) %></li>
+
+  				<% end %>
+			</li>
+		<% end %>
+	</ul>
