@@ -4,7 +4,9 @@
 	box-sizing: border-box;
 	width: 100%;
 	text-align: left;
-	font: bold 16px sans-serif;
+  font-family: 'Emilys Candy', cursive;
+
+	font: 16px;
 
 	padding: 55px 50px;
 	margin-top: 80px;
@@ -27,12 +29,12 @@
 
 .footer-distributed h3{
 	color:  #ffffff;
-	font: normal 36px 'Cookie', cursive;
+	font: normal 36px, cursive;
 	margin: 0;
 }
 
 .footer-distributed h3 span{
-	color:  #5383d3;
+	color:  orange;
 }
 
 /* Footer links */
@@ -96,7 +98,7 @@
 }
 
 .footer-distributed .footer-center p a{
-	color:  #5383d3;
+	color:  orange;
 	text-decoration: none;;
 }
 
@@ -165,4 +167,8 @@
 		margin-left: 0;
 	}
 
+}
+
+.footer-icons a:hover {
+	background-color: orange;
 }
