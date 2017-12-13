@@ -17,21 +17,24 @@
 </h2>
 
 <% if browser.device.mobile? %>
-<iframe
-  width="300"
-  height="225"
-  frameborder="0" style="border:0"
-  src="https://www.google.com/maps/embed/v1/place?key=AIzaSyAnTulIOurK-7LgPvkZ2QUZZVF1VtnEKeg
-  &q=<%= @place.title %>">
-</iframe>
+	<iframe
+	  width="300"
+	  height="225"
+	  frameborder="0" style="border:0"
+	  display="block"
+	  src="https://www.google.com/maps/embed/v1/place?key=AIzaSyAnTulIOurK-7LgPvkZ2QUZZVF1VtnEKeg
+	  &q=<%= @place.title %>">
+	</iframe>
 <% else %>
-<iframe
-  width="600"
-  height="450"
-  frameborder="0" style="border:0"
-  src="https://www.google.com/maps/embed/v1/place?key=AIzaSyAnTulIOurK-7LgPvkZ2QUZZVF1VtnEKeg
-  &q=<%= @place.title %>">
-</iframe>
+<div class="prova">
+	<iframe
+	  width="600"
+	  height="450"
+	  frameborder="0" style="border:0"
+	  src="https://www.google.com/maps/embed/v1/place?key=AIzaSyAnTulIOurK-7LgPvkZ2QUZZVF1VtnEKeg
+	  &q=<%= @place.title %>">
+	</iframe>
+</div>
 <% end %>
 
 
