@@ -1,4 +1,20 @@
-<div>
-  <h4>Posted by <%= comment.user.username %> - <%= distance_of_time_in_words(Time.now, comment.created_at)%> ago</h4>
-  <p class="comment"><%= comment.body %></p>
+<div class="row">
+<div class="col-sm-1">
+<div class="thumbnail">
+<%= gravatar_for_comments(comment.user) %>
+</div><!-- /thumbnail -->
+</div><!-- /col-sm-1 -->
+
+<div class="col-sm-10">
+<div class="card card-default">
+<div class="card-header">
+<strong><%= comment.user.username.capitalize %></strong> <span class="text-muted"><%= distance_of_time_in_words(Time.now, comment.created_at)%> ago</span>
 </div>
+<div class="card-body">
+<%= comment.body %>
+</div><!-- /card-body -->
+</div><!-- /card card-default -->
+</div><!-- /col-sm-5 -->
+
+</div><!-- /row -->
+<br>
