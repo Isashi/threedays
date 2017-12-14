@@ -1,9 +1,9 @@
 <% provide(:title, 'All itineraries') %>
 <h1>All itineraries</h1>
-
+<div class="list-group">
 	<ul class="users">
 		<% @itinerary.each do |itinerary| %>
-			<li>
+			<li class="list-group-item">
 				  <%= link_to itinerary.name, itinerary %>
 
 				  <% if user_signed_in? && current_user.id == itinerary.user_id %>
@@ -15,3 +15,4 @@
 			</li>
 		<% end %>
 	</ul>
+</div>

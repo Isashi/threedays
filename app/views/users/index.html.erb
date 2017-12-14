@@ -1,21 +1,26 @@
 <% provide(:title, 'All users') %>
-<h1>All users</h1>
 
-
-
-<div class="flickr_pagination">
-<%= will_paginate %>
+<div class="container">
+	<h1>All users</h1>
+     <div class="row">
+        <div class="flickr_pagination">
+				<%= will_paginate %>
+				</div>
+				<% @users.each do |user| %>
+            <div class="col-sm-6 col-md-4 col-lg-3 mt-4">
+                <div class="card">
+                    <%= gravatar_for user %>
+                    <div class="card-block">
+												<h4><%= link_to user.username, user, class:"card-title" %></h4>
+                        <div class="card-text">
+                            Small bio.
+                        </div>
+                    </div>
+                    <div class="card-footer">
+                        <span class="float-right">Joined in <%= user.created_at.year %></span>
+                    </div>
+                </div>
+            </div>
+        <% end %>
+        </div>
 </div>
-
-	<ul class="users">
-		<% @users.each do |user| %>
-			<li>
-				  <%= gravatar_for user, size: 40 %>
-				  <%= link_to user.username, user %> - 
-				  <%= user.email %>
-
-			</li>
-		<% end %>
-	</ul>
-
-<%= will_paginate %>
