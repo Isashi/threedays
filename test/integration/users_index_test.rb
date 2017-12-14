@@ -13,7 +13,7 @@ class UsersIndexTest < ActionDispatch::IntegrationTest
     get users_path
     assert_template 'users/index'
     @users.each do |user|
-      assert_select 'a[href=?]', user_path(user), text: user.username
+      assert_select 'a[href=?]', user_path(user), text: user.username.capitalize
     end
   end
 end
