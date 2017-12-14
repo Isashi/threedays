@@ -5,19 +5,43 @@
 	<%= will_paginate %>
 	</div>
 
-		<ul class="users">
+		<div class="row row-margin-bottom">
 			<% @places.each do |place| %>
-				<li class="list-group-item">
-					  <%= link_to place.title, place %>
-					  <% if user_signed_in? && current_user.id == place.user_id %>
-	    | 			<%= link_to "Delete", place, method: :delete,
-	                                  data: { confirm: "You sure?" } %>
-	    |       <%= link_to "Edit", edit_place_path(place) %></li>
-
-	  				<% end %>				  
-				</li>
+            <div class="col-md-5 no-padding lib-item" data-category="view">
+                <div class="lib-card">
+                    <div class="row box-shadow">
+                        <div class="col-md-6">
+                        <% if place.pictures.first %>
+                        <%= image_tag(place.pictures.first.image.url, class:"lib-img-show") %>
+                        <% else %>
+                        <%= image_tag("noimage.jpg", class:"lib-img-show") %>
+                        <% end %>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="lib-row lib-header">
+                                <%= link_to place.title, place %>
+                                <div class="lib-header-seperator"></div>
+                            </div>
+                            <div class="lib-row lib-desc">
+                                <%= place.description[0..150]%>
+                                <% if place.description.length > 150 %>
+                                ...(continue)
+                                <% end %>
+                            
+                            </div>
+                        </div>
+                    </div>
+                    <% if user_signed_in? && current_user.id == place.user_id %>
+	    								<%= link_to "Delete", place, method: :delete,
+	                    								              data: { confirm: "You sure?" } %>
+	    								| <%= link_to "Edit", edit_place_path(place) %>
+	  								<% end %>
+					  
+                </div>
+            </div>
 			<% end %>
-		</ul>
-
+    </div>
 	<%= will_paginate %>
 </div>
+
+
