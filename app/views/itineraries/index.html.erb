@@ -7,7 +7,7 @@
 				  <%= link_to itinerary.name, itinerary %>
 
 				  <% if user_signed_in? && current_user.id == itinerary.user_id %>
-    | 			<%= link_to "delete", itinerary, method: :delete,
+    | 			<%= link_to "Delete", itinerary, method: :delete,
                                   data: { confirm: "You sure?" } %>
     |       <%= link_to "Edit", edit_itinerary_path(itinerary) %></li>
 

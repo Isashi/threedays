@@ -10,7 +10,7 @@
 			<li>
 				  <%= link_to place.title, place %>
 				  <% if user_signed_in? && current_user.id == place.user_id %>
-    | 			<%= link_to "delete", place, method: :delete,
+    | 			<%= link_to "Delete", place, method: :delete,
                                   data: { confirm: "You sure?" } %>
     |       <%= link_to "Edit", edit_place_path(place) %></li>
 
