@@ -11,6 +11,7 @@ Rails.application.routes.draw do
 	resources :users
   resources :itineraries
   resources :pictures
+  resources :comments
 	resources :places do
 		resources :comments
 	end

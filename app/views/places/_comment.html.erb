@@ -12,10 +12,14 @@
 <div class="card card-default">
 <div class="card-header">
 <strong><%= comment.user.username.capitalize %></strong> <span class="text-muted"><%= distance_of_time_in_words(Time.now, comment.created_at)%> ago</span>
+<% if user_signed_in? && current_user.id == comment.user.id %>
+    <%= link_to "(Delete this message)", comment, method: :delete %>
+<% end %>
 </div>
 <div class="card-body">
 <%= comment.body %>
 </div><!-- /card-body -->
+				  
 </div><!-- /card card-default -->
 </div><!-- /col-sm-5 -->
 
