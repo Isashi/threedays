@@ -49,7 +49,6 @@
 	display:inline-block;
 	line-height: 1.8;
 	text-decoration: none;
-	color:  inherit;
 }
 
 .footer-distributed .footer-company-name{
@@ -57,6 +56,14 @@
 	font-size: 14px;
 	font-weight: normal;
 	margin: 0;
+}
+
+.footer-item {
+	color: inherit;
+}
+
+.footer-item:hover {
+	color: orange;
 }
 
 /* Footer Center */
