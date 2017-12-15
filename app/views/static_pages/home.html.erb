@@ -1,11 +1,137 @@
-<div class="center jumbotron">
-	<h1>Welcome to the 3-Days Travel App</h1>
+    <!-- Masthead -->
+    <header class="masthead text-white text-center" style="background: url(<%= asset_path 'masthead.jpg' %>) no-repeat center center;">
+      <div class="overlay"></div>
+      <div class="container">
+        <div class="row">
+          <div class="col-xl-9 mx-auto">
+            <h1 class="mb-5">Welcome traveller to the 3days app! We are glad to see you here!</h1>
+          </div>
+          <div class="col-md-10 col-lg-8 col-xl-7 mx-auto">
+              <div class="form-row">
+              	<div class="col-12 col-md-5">
+                </div>
+                <div class="col-12 col-md-3">
 
-	<h2>
-	  This is the home page for the ThreeDays application.
-	</h2>
+                	<%= link_to "Sign up now!", new_user_registration_path, class: "btn btn-block btn-lg btn-primary" %>
+                </div>
+          </div>
+        </div>
+      </div>
+    </header>
 
-	<%= link_to "Sign up now!", signup_path, class: "btn btn-lg btn-primary" %>
-</div>
+    <!-- Icons Grid -->
+    <section class="features-icons bg-light text-center">
+      <div class="container">
+        <div class="row">
+          <div class="col-lg-4">
+            <div class="features-icons-item mx-auto mb-5 mb-lg-0 mb-lg-3">
+              <div class="features-icons-icon d-flex">
+                <i class="fa fa-globe m-auto text-primary"></i>
+              </div>
+              <h3>All around the world</h3>
+              <p class="lead mb-0">Visit the suggested places in our itineraries all around the world!</p>
+            </div>
+          </div>
+          <div class="col-lg-4">
+            <div class="features-icons-item mx-auto mb-5 mb-lg-0 mb-lg-3">
+              <div class="features-icons-icon d-flex">
+                <i class="fa fa-user-circle m-auto text-primary"></i>
+              </div>
+              <h3>Real people</h3>
+              <p class="lead mb-0">All our itineraries and stories are created by real people that visited the same places.</p>
+            </div>
+          </div>
+          <div class="col-lg-4">
+            <div class="features-icons-item mx-auto mb-0 mb-lg-3">
+              <div class="features-icons-icon d-flex">
+                <i class="fa fa-camera m-auto text-primary"></i>
+              </div>
+              <h3>Variety of itineraries</h3>
+              <p class="lead mb-0">Select your favourite itinerary and be sure to don't miss anything important.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
 
-<%= link_to image_tag("rails.png", alt: "Rails logo"), "http://rubyonrails.org" %>
+    <!-- Image Showcases -->
+    <section class="showcase">
+      <div class="container-fluid p-0">
+        <div class="row no-gutters">
+
+          <div class="col-lg-6 order-lg-2 text-white showcase-img" style="background-image: url(<%= asset_path 'bg-showcase1.jpg' %>);"></div>
+          <div class="col-lg-6 order-lg-1 my-auto showcase-text">
+            <h2>Visit wonderful cities!</h2>
+            <p class="lead mb-0">Pick one of our itineraries and enjoy a weekend in a wonderful city. We offer a great variety of itineraries, in order to let people visit and enjoy the cities in different ways.</p>
+          </div>
+        </div>
+        <div class="row no-gutters">
+          <div class="col-lg-6 text-white showcase-img" style="background-image: url(<%= asset_path 'bg-showcase2.jpg' %>);"></div>
+          <div class="col-lg-6 my-auto showcase-text">
+            <h2>Don't worry about organizing!</h2>
+            <p class="lead mb-0">Don't worry to miss an important monument, museum or restaurant! With our itinieraries, you are sure you will visit the "must-see" places in every city.</p>
+          </div>
+        </div>
+        <div class="row no-gutters">
+          <div class="col-lg-6 order-lg-2 text-white showcase-img" style="background-image: url(<%= asset_path 'bg-showcase3.jpg' %>);"></div>
+          <div class="col-lg-6 order-lg-1 my-auto showcase-text">
+            <h2>Share your experience!</h2>
+            <p class="lead mb-0">Your ideal itinerary is not present? Create it! All our itineraries are developed thanks to our Community, feel free to share your travel experiences creating personalized itineraries!</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Testimonials -->
+    <section class="testimonials text-center bg-light">
+      <div class="container">
+        <h2 class="mb-5">What people are saying...</h2>
+        <div class="row">
+          <div class="col-lg-4">
+            <div class="testimonial-item mx-auto mb-5 mb-lg-0">
+              <img class="img-fluid rounded-circle mb-3" src="<%= asset_path 'testimonials-1.jpg' %>" alt="">
+              <h5>Margaret E.</h5>
+              <p class="font-weight-light mb-0">"This is fantastic! Thanks so much guys!"</p>
+            </div>
+          </div>
+          <div class="col-lg-4">
+            <div class="testimonial-item mx-auto mb-5 mb-lg-0">
+              <img class="img-fluid rounded-circle mb-3" src="<%= asset_path 'testimonials-2.jpg' %>" alt="">
+              <h5>Fred S.</h5>
+              <p class="font-weight-light mb-0">"Prague was amazing. I've been using 3days app and I fully enjoyed it."</p>
+            </div>
+          </div>
+          <div class="col-lg-4">
+            <div class="testimonial-item mx-auto mb-5 mb-lg-0">
+              <img class="img-fluid rounded-circle mb-3" src="<%= asset_path 'testimonials-3.jpg' %>" alt="">
+              <h5>Sarah	W.</h5>
+              <p class="font-weight-light mb-0">"Thanks so Marcelle for her wonderful Paris itinerary! We has our favourite weekend there."</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Call to Action -->
+    <section class="call-to-action text-white text-center" style="background: url(<%= asset_path 'masthead.jpg' %>) no-repeat center center;">
+      <div class="overlay"></div>
+      <div class="container">
+        <div class="row">
+          <div class="col-xl-9 mx-auto">
+            <h2 class="mb-4" style="color: white">Ready to get started? Join us!</h2>
+          </div>
+          <div class="col-md-10 col-lg-8 col-xl-7 mx-auto">
+            <form>
+              <div class="form-row">
+              	<div class="col-12 col-md-5">
+                </div>
+                <div class="col-12 col-md-3">
+
+                	<%= link_to "Sign up now!", new_user_registration_path, class: "btn btn-block btn-lg btn-primary" %>
+                </div>
+              </div>
+            </form>
+          </div>
+        </div>
+      </div>
+</section>
