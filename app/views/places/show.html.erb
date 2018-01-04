@@ -4,8 +4,9 @@
 </h1>
 
 <!-- CAROUSEL -->
+<div class="carousel">
 <%= render 'places/picture' %>
-
+</div>
 <h2>
   <%= @place.description %>
 </h2>
@@ -15,7 +16,7 @@
 <h2>
   Long: <%= @place.long %>
 </h2>
-
+<h2>
 <% if browser.device.mobile? %>
 	<iframe
 	  width="300"
@@ -36,9 +37,11 @@
 	</iframe>
 </div>
 <% end %>
+</h2>
 
 
-<h3>Comments</h3>
+<div class="container">
+<h1>Comments</h1>
 
 <%= render partial: 'places/comment', collection: @place.comments %>
 
@@ -48,5 +51,5 @@
 <%= render partial: 'comments/form' %>
 
 <% end %>
-
+</div>
 

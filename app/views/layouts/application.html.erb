@@ -10,17 +10,18 @@
     <%= csrf_meta_tags %>
     <%= render 'layouts/shim' %>
     <%= render 'layouts/rails_default' %>
+    <%= favicon_link_tag %>    
   </head>
   <body>
     <%= render 'layouts/header' %>
 
 
-  	<div class="">
+  	<div class="container">
 
 
       <div class="alert-success" role="alert"><%= notice %></div>
       <div class="alert-danger" role="alert"><%= alert %></div>
-    	
+    
       <%= yield %>
     
     <!-- <%= debug(params) if Rails.env.development? %> -->
