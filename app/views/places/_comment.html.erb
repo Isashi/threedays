@@ -13,7 +13,7 @@
 <div class="card-header">
 <strong><%= comment.user.username.capitalize %></strong> <span class="text-muted"><%= distance_of_time_in_words(Time.now, comment.created_at)%> ago</span>
 <% if user_signed_in? && current_user.id == comment.user.id %>
-    <%= link_to "(Delete this message)", comment, method: :delete %>
+    <%= link_to "(Delete this message)", comment, method: :delete, class:"title-colorize" %>
 <% end %>
 </div>
 <div class="card-body">
