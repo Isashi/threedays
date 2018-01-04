@@ -19,7 +19,7 @@
                         </div>
                         <div class="col-md-6">
                             <div class="lib-row lib-header">
-                                <%= link_to place.title, place %>
+                                <%= link_to place.title, place, class:"title-colorize" %>
                                 <div class="lib-header-seperator"></div>
                             </div>
                             <div class="lib-row lib-desc">
@@ -33,8 +33,8 @@
                     </div>
                     <% if user_signed_in? && current_user.id == place.user_id %>
 	    								<%= link_to "Delete", place, method: :delete,
-	                    								              data: { confirm: "You sure?" } %>
-	    								| <%= link_to "Edit", edit_place_path(place) %>
+	                    								              data: { confirm: "You sure?" }, class:"title-colorize" %>
+	    								| <%= link_to "Edit", edit_place_path(place), class:"title-colorize" %>
 	  								<% end %>
 					  
                 </div>

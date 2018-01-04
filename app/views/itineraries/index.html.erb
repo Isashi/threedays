@@ -17,13 +17,13 @@
 
           <div class="card-body">
             <span class="badge-box"><i class="fa fa-check"></i></span>
-            <h4 class="card-title"><%= link_to itinerary.name, itinerary %></h4>
+            <h4 class="card-title"><%= link_to itinerary.name, itinerary, class:"title-colorize" %></h4>
             <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
 
             				  <% if user_signed_in? && current_user.id == itinerary.user_id %>
     <%= link_to "Delete", itinerary, method: :delete,
-                                  data: { confirm: "You sure?" } %>
-    |       <%= link_to "Edit", edit_itinerary_path(itinerary) %>
+                                  data: { confirm: "You sure?" }, class:"title-colorize" %>
+    |       <%= link_to "Edit", edit_itinerary_path(itinerary), class:"title-colorize" %>
     <% else %>
     <br>
   				<% end %>
