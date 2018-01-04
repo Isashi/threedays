@@ -11,8 +11,8 @@
 	  <% if user_signed_in? && current_user.id == @place.user_id %>
 		  	<div class="carousel-caption d-none d-md-block">
 	    		<p>	
-	    			<%= link_to "delete", picture, method: :delete,
-         	                         		data: { confirm: "You sure?" } %>
+	    			<%= link_to "Delete", picture, method: :delete,
+         	                         		data: { confirm: "You sure?" }, class: "btn btn-orange" %>
   				</p>
   			</div>
   	<% end %>
