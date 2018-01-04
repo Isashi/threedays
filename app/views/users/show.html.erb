@@ -1,8 +1,90 @@
+<br>
 <% provide(:title, @user.username) %>
 <h1>
   <%= gravatar_for @user %>
-  <%= @user.username %>
+  <%= @user.username.capitalize %>
 </h1>
 <h2>
   <%= @user.email %>
 </h2>
+
+
+<% if @user.places.present? %>
+<h1>Places created by <%= @user.username.capitalize %> </h1>
+	<div class="flickr_pagination">
+	<%= will_paginate @places%>
+	</div>
+
+		<div class="row row-margin-bottom">
+			<% @places.each do |place| %>
+            <div class="col-md-5 no-padding lib-item" data-category="view">
+                <div class="lib-card">
+                    <div class="row box-shadow">
+                        <div class="col-md-6">
+                        <% if place.pictures.first %>
+                        <%= image_tag(place.pictures.first.image.url, class:"lib-img-show") %>
+                        <% else %>
+                        <%= image_tag("noimage.jpg", class:"lib-img-show") %>
+                        <% end %>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="lib-row lib-header">
+                                <%= link_to place.title, place, class:"title-colorize" %>
+                                <div class="lib-header-seperator"></div>
+                            </div>
+                            <div class="lib-row lib-desc">
+                                <%= place.description[0..150]%>
+                                <% if place.description.length > 150 %>
+                                ...(continue)
+                                <% end %>
+                            
+                            </div>
+                        </div>
+                    </div>
+                    <% if user_signed_in? && current_user.id == place.user_id %>
+	    								<%= link_to "Delete", place, method: :delete,
+	                    								              data: { confirm: "You sure?" }, class:"title-colorize" %>
+	    								| <%= link_to "Edit", edit_place_path(place), class:"title-colorize" %>
+	  								<% end %>
+					  
+                </div>
+            </div>
+			<% end %>
+    </div>
+<% end %>
+
+
+<% if @user.itineraries.present? %>
+<h1>Itineraries created by <%= @user.username.capitalize %> </h1>
+	<div class="flickr_pagination">
+	<%= will_paginate @itineraries%>
+	</div>
+        <div class="row">
+<% @user.itineraries.each do |itinerary| %>
+        <div class="col-sm-6 col-md-4 col-lg-3 mt-4">
+          <div class="card card-01">
+                        <% if not itinerary.places.first == nil %>
+                        <%= image_tag(itinerary.places.first.pictures.first.image.url, class:"card-img-topit") %>
+                        <% else %>
+                        <%= image_tag("noimage.jpg", class:"card-img-topit") %>
+                        <% end %>
+          
+
+          <div class="card-body">
+            <span class="badge-box"><i class="fa fa-check"></i></span>
+            <h4 class="card-title"><%= link_to itinerary.name, itinerary, class:"title-colorize" %></h4>
+            <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+
+            				  <% if user_signed_in? && current_user.id == itinerary.user_id %>
+    <%= link_to "Delete", itinerary, method: :delete,
+                                  data: { confirm: "You sure?" }, class:"title-colorize" %>
+    |       <%= link_to "Edit", edit_itinerary_path(itinerary), class:"title-colorize" %>
+    <% else %>
+    <br>
+  				<% end %>
+          </div>
+        </div>
+        </div>
+		<% end %>
+</div>
+<% end %>

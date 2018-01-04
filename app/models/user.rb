@@ -37,6 +37,7 @@ class User < ApplicationRecord
 	#ASSOCIATIONS
 	has_many :places
 	has_many :comments
+	has_many :itineraries
 
   before_save {self.username = self.username.downcase}
 
