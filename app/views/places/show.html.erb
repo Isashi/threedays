@@ -10,13 +10,7 @@
 <h2>
   <%= @place.description %>
 </h2>
-<h2>
-  Lat: <%= @place.lat %>
-</h2>
-<h2>
-  Long: <%= @place.long %>
-</h2>
-<h2>
+
 <% if browser.device.mobile? %>
 	<iframe
 	  width="300"
@@ -38,6 +32,12 @@
 </div>
 <% end %>
 </h2>
+<% if (@place.lat.present?) and (@place.long.present?) %>
+	<h2>
+		Exact location (Lat: <%= @place.lat %>, Long: <%= @place.long %> )
+	</h2>
+	<h2>
+<% end %>
 
 
 <div class="container">
