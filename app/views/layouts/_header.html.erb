@@ -25,7 +25,9 @@
               <%= link_to "Create new place", new_place_path, class:"dropdown-item" %>
               <%= link_to "Create new itinerary", new_itinerary_path, class:"dropdown-item" %>      
               <%= link_to "Show Profile", user_path(current_user), class:"dropdown-item" %>
-              <%= link_to "Edit Profile", edit_user_registration_path, class:"dropdown-item" %>
+              <% if current_user.provider.nil? %>
+                <%= link_to "Edit Profile", edit_user_registration_path, class:"dropdown-item" %>
+              <% end %>
               <%= link_to "Sign out", destroy_user_session_path, method: :delete, class:"dropdown-item"%>
             </div>
           <% else %>
