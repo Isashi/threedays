@@ -22,7 +22,7 @@
                                 <%= link_to place.title, place, class:"title-colorize", style:"font-size: 1.1em; font-weight: bold" %>
                                 <div class="lib-header-seperator"></div>
                             </div>
-                            <div class="lib-row lib-desc">
+                            <div class="lib-row lib-desc", style="font-size: 0.8em">
                                 <%= place.description[0..150]%>
                                 <% if place.description.length > 150 %>
                                 ...(continue)
