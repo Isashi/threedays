@@ -12,8 +12,13 @@
                     <%= gravatar_for_index user %>
                     <div class="card-block">
 												<h4><%= link_to user.username.capitalize, user, class:"card-title title-colorize" %></h4>
-                        <div class="card-text">
-                            Small bio.
+                        <div class="card-text-user">
+                            <% if user.bio == nil %>
+                            <% elsif user.bio.length > 70 %>
+                                <%= user.bio[0..70]+"..." %>
+                            <% else %>
+                                <%= user.bio %>
+                            <% end %>
                         </div>
                     </div>
                     <div class="card-footer">
