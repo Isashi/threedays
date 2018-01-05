@@ -12,7 +12,7 @@ class UsersProfileTest < ActionDispatch::IntegrationTest
     get user_path(@user)
     assert_template 'users/show'
     assert_select 'title', "#{@user.username} | 3days travel"
-    assert_select 'h1', text: @user.username
+    assert_select 'h1', text: @user.username.capitalize
     assert_select 'img'
   end
 end
