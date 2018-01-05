@@ -1,13 +1,17 @@
 <div class="container">
 <br>
 <% provide(:title, @user.username) %>
-<h1>
+<h1 style="margin-bottom: 15px; text-align:center !important">
   <%= gravatar_for @user %>
   <%= @user.username.capitalize %>
 </h1>
-<h2>
-  <%= @user.email %>
-</h2>
+<div class="card-footer" style="padding: .25em 1em; text-align: center">
+    <span>Joined in <%= Date::MONTHNAMES[@user.created_at.month] %> <%= @user.created_at.year %></span>
+</div>
+<h1 style="text-align:left !important; font-size: 2em; margin-top: 15px; margin-bottom: 5px">
+  Bio:
+</h1>
+<div style="margin-bottom: 10px; font-size: 1.5em"><%= @user.bio %></div>
 
 
 <% if @user.places.present? %>
