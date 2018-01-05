@@ -4,10 +4,47 @@
   Itinerary: <%= @itinerary.name %>!
 </h1>
 
-<% @itinerary.places.each do |place| %>
-	<li>
-		  <%= link_to place.title, place %>
-	</li>
+<% if @itinerary.description.nil? %>
+	<div style="margin-bottom: 30px; font-size: 1.3em">-</div>
+<% else %>
+	<div style="margin-bottom: 30px; font-size: 1.3em"><%= @itinerary.description %></div>
 <% end %>
+
+		<div class="row row-margin-bottom">
+			<% @itinerary.places.each do |place| %>
+            <div class="col-md-5 no-padding lib-item" data-category="view">
+                <div class="lib-card">
+                    <div class="row box-shadow">
+                        <div class="col-md-6">
+                        <% if place.pictures.first %>
+                        <%= image_tag(place.pictures.first.image.url, class:"lib-img-show") %>
+                        <% else %>
+                        <%= image_tag("noimage.jpg", class:"lib-img-show") %>
+                        <% end %>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="lib-row lib-header">
+                                <%= link_to place.title, place, class:"title-colorize", style:"font-size: 1.1em; font-weight: bold" %>
+                                <div class="lib-header-seperator"></div>
+                            </div>
+                            <div class="lib-row lib-desc", style="font-size: 0.8em">
+                                <%= place.description[0..150]%>
+                                <% if place.description.length > 150 %>
+                                ...(continue)
+                                <% end %>
+                            
+                            </div>
+                        </div>
+                    </div>
+                    <% if user_signed_in? && current_user.id == place.user_id %>
+	    								<%= link_to "Delete", place, method: :delete,
+	                    								              data: { confirm: "You sure?" }, class:"title-colorize" %>
+	    								| <%= link_to "Edit", edit_place_path(place), class:"title-colorize" %>
+	  								<% end %>
+					  
+                </div>
+            </div>
+			<% end %>
+    </div>
 
 </div>
