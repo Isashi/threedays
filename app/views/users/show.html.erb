@@ -11,8 +11,11 @@
 <h1 style="text-align:left !important; font-size: 2em; margin-top: 15px; margin-bottom: 5px">
   Bio:
 </h1>
+<% if @user.bio.nil? %>
+<div style="margin-bottom: 10px; font-size: 1.5em">-</div>
+<% else %>
 <div style="margin-bottom: 10px; font-size: 1.5em"><%= @user.bio %></div>
-
+<% end %>
 
 <% if @user.places.present? %>
 <h1>Places created by <%= @user.username.capitalize %> </h1>
@@ -34,7 +37,7 @@
                         </div>
                         <div class="col-md-6">
                             <div class="lib-row lib-header">
-                                <%= link_to place.title, place, class:"title-colorize" %>
+                                <%= link_to place.title, place, class:"title-colorize", style:"font-size: 1.1em" %>
                                 <div class="lib-header-seperator"></div>
                             </div>
                             <div class="lib-row lib-desc">
