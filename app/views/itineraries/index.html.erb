@@ -1,6 +1,6 @@
 <div class="container">
 <% provide(:title, 'All itineraries') %>
-<h1>All itineraries</h1>
+<h1 class="maintitle">All itineraries</h1>
 
 
 
@@ -28,7 +28,7 @@
             <% end %>
             </p>
 
-            				  <% if user_signed_in? && current_user.id == itinerary.user_id %>
+            				  <% if user_signed_in? && (current_user.id == itinerary.user_id || current_user.admin == true) %>
     <%= link_to "Delete", itinerary, method: :delete,
                                   data: { confirm: "You sure?" }, class:"title-colorize" %>
     |       <%= link_to "Edit", edit_itinerary_path(itinerary), class:"title-colorize" %>

@@ -12,4 +12,10 @@ class UsersController < ApplicationController
     @itineraries = @user.itineraries.paginate(:page => params[:page], :per_page => 10)
   end
 
+  def destroy
+    User.find(params[:id]).destroy
+    flash[:success] = "Place deleted"
+    redirect_to users_url
+  end  
+
 end

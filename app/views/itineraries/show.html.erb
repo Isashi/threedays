@@ -1,6 +1,6 @@
 <div class="container">
 <% provide(:title, @itinerary.name) %>
-<h1>
+<h1 class="maintitle">
   Itinerary: <%= @itinerary.name %>!
 </h1>
 
@@ -36,7 +36,7 @@
                             </div>
                         </div>
                     </div>
-                    <% if user_signed_in? && current_user.id == place.user_id %>
+                    <% if user_signed_in? && (current_user.id == place.user_id || current_user.admin == true) %>
 	    								<%= link_to "Delete", place, method: :delete,
 	                    								              data: { confirm: "You sure?" }, class:"title-colorize" %>
 	    								| <%= link_to "Edit", edit_place_path(place), class:"title-colorize" %>

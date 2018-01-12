@@ -1,7 +1,7 @@
 <div class="container">
 <br>
 <% provide(:title, @user.username) %>
-<h1 style="margin-bottom: 15px; text-align:center !important">
+<h1 class="maintitle" style="margin-bottom: 15px; text-align:center !important">
   <%= gravatar_for @user %>
   <%= @user.username.capitalize %>
 </h1>
