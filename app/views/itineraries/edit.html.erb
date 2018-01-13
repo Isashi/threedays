@@ -1,5 +1,5 @@
 <div class="container">
-Itinerary edit!
+<h1 class="maintitle">Itinerary edit!</h1>
 
 <%= form_for @itinerary do |f| %>
   <%= @itinerary.id %>
@@ -9,12 +9,18 @@ Itinerary edit!
   </p>
 
   <p>
-  <%= f.label "Select a place:" %><br/>
-	<%= f.collection_check_boxes(:id, Place.all, :id, :title, {:multiple => true}) %>
+    <%= f.label :description %><br/>
+    <%= f.text_field :description %>
+  </p>  
+
+  <p>
+    <%= f.label "Select a place:" %><br/>
+	  <%= f.collection_check_boxes(:id, Place.all, :id, :title, {:multiple => true}) %>
 	</p>
 
   <p>
-    <%= f.submit 'Save changes' %>
+    <%= f.submit 'Save changes', class: "btn btn-orange" %>
   </p>
 <% end %>
 </div>
+</br>
